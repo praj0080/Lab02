@@ -25,8 +25,8 @@ In this lab, I found out how to connect a Flask app to the monitoring systems of
 - **Log Delay**: When diagnostic options were turned on, logs became visible in Log Analytics after several minutes which led to confusion in the first days.
 - I was looking forward to certain columns such as `LogLevel` which were not present and I was forced to look through the actual log schema with `search` queries to find the right table and columns.
 - **Incorrect URLS**: I entered a missing App Service URL in my `.http` file, and I failed all tests until I changed it to the correct one.
-**Flask Logging**: Setting Flask up to log to stdout explicitly had to be done in order to get errors to be captured correctly by Azure.
-  ---
+- **Flask Logging**:  Setting Flask up to log to stdout explicitly had to be done in order to get errors to be captured correctly by Azure.
+ ---
 ## 🔐 How I Would Improve This in a Real-World Scenario
 
 - **IP Address Logging**: Record and log the IP address of a source of the login by each attack because this can enable tracking and blocking.
@@ -39,11 +39,24 @@ In this lab, I found out how to connect a Flask app to the monitoring systems of
 
 ```kusto
 AppServiceConsoleLogs
-| where _ResourceId contains "flask-login-monitor-8387" 
+| where _ResourceId contains "flask-login-monitor-8387"
 | where TimeGenerated > ago(15m)
 | sort by TimeGenerated desc
+```
+
+This KQL query filters App Service console logs for the web app `flask-login-monitor-8387`, capturing entries from the past 15 minutes and sorting them by time.
+
+---
 
 ## 🎥 Demo Video
 https://drive.google.com/file/d/1o_KS-F2ew2bc7tOa0cz-J74MO5BxFnhB/view?usp=sharing 
+
+## 📁 Project Files
+
+- `app.py`: Flask application with `/login` route
+- `requirements.txt`: Python dependencies
+- `test-app.http`: Test login requests using REST Client
+- `README.md`: Project summary and insights
+
 
 
