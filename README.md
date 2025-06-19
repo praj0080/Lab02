@@ -36,11 +36,14 @@ In this lab, I found out how to connect a Flask app to the monitoring systems of
 - **Webhook or Logic App Alerts**: Webhook or Logic App alerts will be attended to and instead of just email, automated workflows (Slack, Teams or ticketing systems) can be integrated.
 ---
 ## 🔎 KQL Query Used for Alert
-```AppServiceConsoleLogs
+
+```kusto
+AppServiceConsoleLogs
 | where _ResourceId contains "flask-login-monitor-8387" 
 | where TimeGenerated > ago(15m)
-| sort by TimeGenerated desc```
+| sort by TimeGenerated desc
 
----
+## 🔎 Demo video
+
 
 
