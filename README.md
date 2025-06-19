@@ -43,7 +43,7 @@ AppServiceConsoleLogs
 | where TimeGenerated > ago(15m)
 | sort by TimeGenerated desc
 
-## 🔎 Demo video
-
+## 🎥 Demo Video
+https://drive.google.com/file/d/1o_KS-F2ew2bc7tOa0cz-J74MO5BxFnhB/view?usp=sharing 
 
 
