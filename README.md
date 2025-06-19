@@ -31,7 +31,7 @@ In this lab, I found out how to connect a Flask app to the monitoring systems of
 - **IP Address Logging**: Record and log the IP address of a source of the login by each attack because this can enable tracking and blocking.
 - **Rate Limiting** Enact a throttle to exclude multiple attempts of logins using the same IP.
 - **Trusting CAPTCHA**: Enable CAPTCHA to minimize the amount of bot-based logins.
-- **Sophisticated KQL**: Aggregation functions (ex. `summarize count() by bin(TimeGenerated, 5m), IPAddress) can be utilized to find patterns of brute-force in time.
+- **Sophisticated KQL**: Aggregation functions (ex. `summarize count() by bin(TimeGenerated, 15m), IPAddress) can be utilized to find patterns of brute-force in time.
 - **Webhook or Logic App Alerts**: Webhook or Logic App alerts will be attended to and instead of just email, automated workflows (Slack, Teams or ticketing systems) can be integrated.
 ---
 ## 🔎 KQL Query Used for Alert
