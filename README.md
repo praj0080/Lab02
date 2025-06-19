@@ -1,5 +1,6 @@
 # Flask Login Monitor – Azure Monitor + KQL Alert Lab
 ## 📘 Overview
+---
 This solution explains how to code and deliver a small application using Python Flask and the Azure Monitor to log into authentication activity, and track real-time threat detection. The application tracks successful and unsuccessful attempts made to log in, suspicious behaviour in logins (e.g. brute-force attacks) is raised if detected via Kusto Query Language (KQL).
 ---
 ## ✅ Objectives Completed
